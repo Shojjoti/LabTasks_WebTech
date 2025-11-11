@@ -31,8 +31,18 @@
         .sm {
             font-size: 10px;
         }
-
-
+        .button {           
+           color: white;
+           border: none;
+           padding: 10px 20px;
+           border-radius: 5px;
+           font-size: 15px;
+           cursor: pointer;
+           margin-right: 10px;
+        }
+        #center{
+            text-align: center;
+        }
 
     </style>
 </head>
@@ -158,21 +168,141 @@
         </form>
 
         <div class="section 2">
-
             <h2 id="heading" >Honorarium and Memorial Donation Information</h2>
-            <form action=""></form>
 
+            <tr>                
+                <td class="right-alignment"> <label class="right-alignment">I would like to make this<br>donation</label></td>
+                <td>
+                    <input type="radio"> To Honor
+                    <br> 
+                    <input type="radio"> In Memory
+                </td>             
+            </tr> 
+            <br>                            
+        </div>
+        <form>
+            <tr>
+                <td class="right-alignment" > Name</td>
+                <td><input class="textBox" type="text" />
+                </td>
+            </tr>
+            
+            <br>
 
+            <tr>
+                <td class="right-alignment">Acknowledge Donation to</td>
+                <td><input class="textBox" type="text" required></td>
+            </tr>
+
+            <br>
+
+            <tr>
+                <td class="right-alignment">Address</td>
+                <td><input class="textBox" type="text" required></td>
+            </tr>
+            <br>
+
+            <tr>
+                <td class="right-alignment">City</td>
+                <td><input class="textBox" type="text" required></td>
+            </tr>
+
+            <br>
+            <tr>
+                <td class="right-alignment">State</td>
+                <td> <select >
+                        <option>Select a State</option>
+                        <option>California</option>
+                        <option>New York</option>
+                        <option>Texas</option>
+                    </select></td>
+            </tr>
+
+            <br>
+            <tr>
+                <td class="right-alignment">Zip</td>
+                <td><input class="textBox" type="text" required></td>
+            </tr>
+            
+        </form>            
+                 
+        <div class="section 3">
+                <tr>                    
+                    <h2 id="heading">Additional Information</h2>                    
+                </tr>
+                <tr>
+                    <td>
+                        <p class="sm">Please enter your name, company or organization as you would like it to appear in our
+                            publications:</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> <input class="sm" type="checkbox">I would like my gift to remain anonymous.</td> 
+                    <br> 
+                    <td ><input class="sm" type="checkbox"> My employer offers a matching gift program. I will
+                            mail the matching
+                            gift form.</></td>
+                </tr>
+                <br> 
+                <br>
+                
+                <tr>
+                  <td class="right-alignment" id="center">Comments</td>
+                  <td><textarea placeholder="Enter any questions or feedback"></textarea>
+                  </td>
+                </tr>
+                <br>
+              
+                <tr>
+                    <td ><input class="sm" type="checkbox"> Please save the cost of acknowledging this gift by
+                            not mailing a
+                            thank you letter.</td>
+                </tr>            
+
+            
+
+            <tr>
+                <td class="right-alignment">How may we contact you?</td>
+                <td>
+                    <div>
+                        <label><input class="sm" type="checkbox"> E-mail</label><br>
+                        <label><input class="sm" type="checkbox"> Postal Mail</label><br>
+                        <label><input class="sm" type="checkbox"> Telephone</label><br>
+                        <label><input class="sm" type="checkbox"> Fax</label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <span class="sm">I would like to receive newsletters and information about special events by</span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div>
+                        <label><input class="sm" type="checkbox"> E-mail</label><br>
+                        <label><input class="sm" type="checkbox"> Postal Mail</label><br>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td > <input type="checkbox"> I would like information about volunteering with the
+                        organization.</td>
+            </tr>
+
+        </table>
         </div>
 
+        <div class="button">
+            <button type="reset">Reset</button>
+            <button type="submit">Continue</button>
+        </div>
 
-
-
-
-
-        
-
-
-    </div>
+        <p><small>Donate online with confidence. You are on a secure server.</small></p>
+        <p><small>If you have any problems or questions, please contact support.</small></p>
+    </form>     
 </body>
 </html>
