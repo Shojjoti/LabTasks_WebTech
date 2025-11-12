@@ -1,0 +1,108 @@
+/* ===== GENERAL STYLES ===== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 15px 40px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff9800;
+}
+
+/* ===== PRODUCT GRID ===== */
+.product-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  justify-items: center;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 280px;
+  text-align: center;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.product-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.product-card h2 {
+  margin: 15px 0 10px;
+  color: #333;
+}
+
+.product-card p {
+  color: #555;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.buy-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #ff9800;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.buy-btn:hover {
+  background-color: #e68900;
+}
+
+/* Hover outline effect */
+.product-card:hover {
+  outline: 3px solid #ff9800;
+  outline-offset: 5px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
