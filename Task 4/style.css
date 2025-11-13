@@ -10,7 +10,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: #ff9800;
   color: white;
   padding: 15px 40px;
 }
@@ -100,7 +100,7 @@ body {
 
 /* ===== FOOTER ===== */
 .footer {
-  background-color: #333;
+  background-color: #ff9800;
   color: white;
   text-align: center;
   padding: 15px 0;
