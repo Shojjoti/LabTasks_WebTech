@@ -5,29 +5,28 @@ function loginUser() {
 
     // Name Validation
     if (!nameValue || nameValue === "") {
-        const ErrorElement = document.getElementById("nameErr");
-        ErrorElement.innerHTML = "User Name is required";
+        document.getElementById("nameErr").innerHTML = "User Name is required";
     } else {
-        const ErrorElement = document.getElementById("nameErr");
-        ErrorElement.innerHTML = "";
+        document.getElementById("nameErr").innerHTML = "";
     }
 
     // Password Validation
     if (!passwordValue || passwordValue === "") {
-        const ErrorElement = document.getElementById("passwordErr");
-        ErrorElement.innerHTML = "Password is required";
+        document.getElementById("passwordErr").innerHTML = "Password is required";
     } else {
-        const ErrorElement = document.getElementById("passwordErr");
-        ErrorElement.innerHTML = "";
+        document.getElementById("passwordErr").innerHTML = "";
     }
 
-    
+    // Check both fields filled
+    if (nameValue === "" || passwordValue === "") {
+        return;
+    }
 
     let correctUser = "Shojjoti";
     let correctPass = "Sh1234";
 
-    if (username.value === correctUser && password.value === correctPass) {
-        alert("Login Successful!");         
+    if (nameValue === correctUser && passwordValue === correctPass) {
+        alert("Login Successful!");
     } else {
         alert("Invalid Username or Password!");
     }

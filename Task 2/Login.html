@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN</title>
     <link rel="stylesheet" href="Sstyle.css">
+    <script src="script.js"></script>
 </head>
 <body>
 <div class="container">
@@ -22,17 +23,21 @@
         <h3>LOGIN</h3>
 
         <div class="form-row">
-            <div class="label" >User Name:</div>
+            <div class="label" id="name">User Name:</div>
             <input class="Textbox" type="text" placeholder="Enter Name" id="name">
+            <div id="nameErr" style="color:red;"></div>
+
         </div>
 
         <div class="form-row">
-            <div class="label">Password:</div>
+            <div class="label" id="password">Password:</div>
             <input class="Textbox" type="password" placeholder="Password" id="password">
+            <div id="passwordErr" style="color:red;"></div>
+
         </div>
 
-        <div>
-            <input type="checkbox"> Remember Me
+       <div>
+          <input type="checkbox"> Remember Me
         </div>
 
         <br>
@@ -48,6 +53,6 @@
     </div>
 
 </div>
-<script src="script.js"></script>
+
 </body>
 </html>
