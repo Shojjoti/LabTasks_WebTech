@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>  
+
+</head>
+<body>
+    <div class="container">
+        <h1>Event Registration</h1>
+
+        <form id="regForm">
+           
+            <label>Full Name *</label>
+            <input type="text" id="fullName">
+            <p id="nameError" class="error">Name must be between 6 and 100 characters.</p>
+
+            
+            <label>Professional Email *</label>
+            <input type="email" id="email">
+            <p id="emailError" class="error">Please enter a valid professional email address.</p>
+
+            
+            <label>Company / Institution (Optional)</label>
+            <input type="text" id="company">
+
+           
+            <label>Attendance Type *</label>
+
+            <div class="radio-group">
+                <input type="radio" name="attendance" value="Virtual"> Virtual
+                <input type="radio" name="attendance" value="In-Person" style="margin-left:20px;"> In-Person
+            </div>
+
+            <p id="attendanceError" class="error">Please select your attendance type.</p>
+
+            <button type="submit">Register Now</button>
+        </form>
+
+        
+        <button id="toggleAnalytics">Show Event Analytics</button>
+
+        
+        <div id="analyticsPanel">
+            <h2>Event Analytics</h2>
+
+            <p><strong>Total Registrants:</strong> <span id="totalCount">0</span></p>
+            <p><strong>Virtual:</strong> <span id="virtualCount">0</span></p>
+            <p><strong>In-Person:</strong> <span id="inPersonCount">0</span></p>
+        </div>
+
+    </div>
+</body>
+
+<script>
+    let registrants = [];
+    let analyticsVisible = false;
+
+    const fullName = document.getElementById("fullName");
+    const email = document.getElementById("email");
+    const company = document.getElementById("company");
+
+    const nameError = document.getElementById("nameError");
+    const emailError = document.getElementById("emailError");
+    const attendanceError = document.getElementById("attendanceError");
+   
+    fullName.addEventListener("input", function() {
+        if (fullName.value.length < 6 || fullName.value.length > 100) {
+            nameError.style.display = "block";
+        } else {
+            nameError.style.display = "none";
+        }
+    });
+    
+    email.addEventListener("input", function() {
+        let valid = /\S+@\S+\.\S+/.test(email.value);
+        emailError.style.display = valid ? "none" : "block";
+    });
+    
+    document.getElementById("regForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        let attendance = document.querySelector("input[name='attendance']:checked");
+
+        let valid = true;
+
+        if (fullName.value.length < 6 || fullName.value.length > 100) {
+            nameError.style.display = "block";
+            valid = false;
+        }
+
+        if (!/\S+@\S+\.\S+/.test(email.value)) {
+            emailError.style.display = "block";
+            valid = false;
+        }
+
+        if (!attendance) {
+            attendanceError.style.display = "block";
+            valid = false;
+        } else {
+            attendanceError.style.display = "none";
+        }
+
+        if (!valid) return;
+
+        
+        registrants.push({
+            name: fullName.value,
+            email: email.value,
+            company: company.value,
+            attendance: attendance.value
+        });
+
+        alert("Registration Successful!");
+
+        updateAnalytics();
+        document.getElementById("regForm").reset();
+    });
+
+
+    
+    document.getElementById("toggleAnalytics").addEventListener("click", function() {
+
+        analyticsVisible = !analyticsVisible;
+
+        document.getElementById("analyticsPanel").style.display =
+            analyticsVisible ? "block" : "none";
+
+        this.textContent = analyticsVisible ? "Hide Event Analytics" : "Show Event Analytics";
+    });
+
+   
+    function updateAnalytics() {
+
+        document.getElementById("totalCount").textContent = registrants.length;
+
+        document.getElementById("virtualCount").textContent =
+            registrants.filter(r => r.attendance === "Virtual").length;
+
+        document.getElementById("inPersonCount").textContent =
+            registrants.filter(r => r.attendance === "In-Person").length;
+    }
+</script>
+</html>
